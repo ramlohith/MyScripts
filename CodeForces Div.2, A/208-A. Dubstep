@@ -1,0 +1,21 @@
+#!/usr/bin/python
+import sys
+
+a=raw_input()
+space = -1
+i=0
+counter= 0
+while i < len(a):
+	if i+2 < len(a) and a[i]=='W'and a[i+1]=='U' and a[i+2]=='B':
+		counter = counter + 1
+		space = space + 1
+		i = i + 3
+		if space > 0 and counter == 1:
+			sys.stdout.write(' ')
+			space = 0
+	else:
+		sys.stdout.write(a[i])
+		i = i+1
+		space = 0
+		counter = 0
+	
