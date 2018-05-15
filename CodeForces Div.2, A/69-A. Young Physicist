@@ -1,0 +1,15 @@
+n = int(raw_input())
+a = []
+x = 0
+y = 0
+z = 0
+for i in range(0,n):
+	a = map(int,raw_input().split())
+	x = x + a[0]
+	y = y + a[1]
+	z = z + a[2]
+
+if x == 0 and y == 0 and z == 0:
+	print "YES"
+else:
+	print "NO"
