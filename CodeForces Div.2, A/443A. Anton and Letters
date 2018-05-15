@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+a = raw_input()
+a = list(a)
+b = []
+
+for i in range(0,len(a)):
+        if a[i] == '{' or a[i]==' ' or a[i]=='}' or a[i] == ',':
+                continue
+        else:
+                b.append(a[i])
+b = set(b)
+print len(b)
