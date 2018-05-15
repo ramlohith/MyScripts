@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+n = int(raw_input())
+x=[]
+y=[]
+x = map(int,raw_input().split())
+y = map(int,raw_input().split())
+del x[0]
+del y[0]
+
+if len(set(x+y)) == n:
+        print "I become the guy"
+else:
+        print "Oh, my keyboard!"
