@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+import string
+
+n = int(raw_input())
+
+if n < 0:
+        n = str(n)
+        x = []
+        y=[]
+        for i in range(len(n)):
+                x.append(n[i])
+        for j in range(len(n)):
+                y.append(n[j])
+
+        del x[-1]
+        del y[-2]
+
+        x = string.join(map(str,x),"")
+        y = string.join(map(str,y),"")
+
+        x = int(x)
+        y = int (y)
+        print max(x,y)
+else:
+    print n
