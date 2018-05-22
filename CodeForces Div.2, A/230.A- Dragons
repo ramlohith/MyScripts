@@ -1,0 +1,16 @@
+#!/usr/bin/python
+
+s,n= map(int, raw_input().split())
+flag = 'YES'
+x = []
+
+for i in range(0,n):
+	x.append(map(int, raw_input().split()))
+
+x.sort()
+
+for i in range(0,n):
+	if s <= x[i][0]:
+		flag = 'NO'
+	s = s + x[i][1]
+print flag
