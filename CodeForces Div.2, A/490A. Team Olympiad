@@ -1,0 +1,29 @@
+#!/usr/bin/python
+
+def teams(b):
+        if b.count(1) == b.count(2) == b.count(3):
+                return b.count(1)
+        elif b.count(1) == 0 or b.count(2) == 0 or b.count(3) == 0:
+                return 0
+        else:
+                return min(b.count(1),b.count(2),b.count(3))
+
+n = int(raw_input())
+a = []
+a = map(int,raw_input().split())
+x = teams(a)
+print x
+
+p = 0
+q = 0
+r = 0
+
+if x > 0:
+        for i in range(0,x):
+                p = a.index(1,p,len(a))
+                q = a.index(2,q,len(a))
+                r = a.index(3,r,len(a))
+                print str(p+1) + " "+str(q+1)+" "+str(r+1)
+                p = p+1
+                q = q+1
+                r = r+1
