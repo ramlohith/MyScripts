@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+n,d = map(int,raw_input().split())
+s = []
+
+s = map(int,raw_input().split())
+
+if (sum(s) + ((n-1)*10)) > d:
+        print "-1"
+else:
+        print (d-sum(s))/5
