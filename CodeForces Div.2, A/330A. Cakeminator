@@ -1,0 +1,27 @@
+#!/usr/bin/python
+
+r,c = map(int,raw_input().split())
+count = 0
+cake = []
+indexr=0
+indexc=0
+
+for i in range(r):
+        cake.append(raw_input())
+
+for i in range(r):
+        for j in cake[i]:
+                 if j == 'S':
+                        indexr = indexr + 1
+                        break
+
+count = (r - indexr)* c
+for i in range(c):
+        for j in range(r):
+                if cake[j][i] == 'S':
+                        indexc = indexc + 1
+                        break
+count = count + ((c - indexc)*r)
+count = count - ((r-indexr) * (c - indexc))
+
+print count
