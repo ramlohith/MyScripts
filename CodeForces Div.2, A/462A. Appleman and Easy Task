@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+n = int(raw_input())
+flag = 'YES'
+c = []
+
+for i in range(0,n):
+        c.append(raw_input())
+
+for i in range(0,n):
+        for j in range(0,n):
+                count = 0
+                if (i > 0 and c[i-1][j] == "o"):
+                        count = count + 1
+                if (i < n-1 and c[i+1][j] == "o"):
+                        count = count + 1
+                if (j > 0 and c[i][j-1] == "o"):
+                        count = count + 1
+                if (j < n-1 and c[i][j+1] == "o"):
+                        count = count + 1
+                if count%2 != 0:
+                        flag = 'NO'
+                        break
+
+print flag
