@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+n =  int(raw_input())
+a = []
+
+a = map(int,raw_input().split())
+
+chest = sum(a[0:n:3])
+biceps = sum(a[1:n:3])
+back = sum(a[2:n:3])
+
+if max(chest,biceps,back) == chest:
+        print "chest"
+elif max(chest,biceps,back) == biceps:
+        print "biceps"
+else:
+        print "back"
