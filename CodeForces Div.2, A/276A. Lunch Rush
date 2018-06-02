@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+n,k = map(int,raw_input().split())
+
+h = []
+r = []
+for i in range(n):
+        h.append(map(int,raw_input().split()))
+for i in range(n):
+        if h[i][1] > k:
+                r.append(h[i][0] - (h[i][1] - k)) 
+        else:
+                r.append(h[i][0])
+
+print max(r)
