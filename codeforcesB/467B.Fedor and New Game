@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+n,m,k = map(int,raw_input().split())
+x = []
+
+for i in range(0,m+1):
+        x.append(int(raw_input()))
+
+y = "{0:020b}".format(x[m])
+y = list(y)
+x.pop()
+friends = 0
+for i in x:
+        z = "{0:020b}".format(i)
+        z = list(z)
+        d = 0
+        for j in range(0,len(y)):
+                 if y[j] != z[j]:
+                        d = d + 1
+                 else:
+                        continue
+        if d <= k:
+                friends = friends + 1
+print friends
