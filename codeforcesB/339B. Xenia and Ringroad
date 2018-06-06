@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+n,m = map(int,raw_input().split())
+a = []
+a = map(int,raw_input().split())
+
+count = a[0] - 1
+
+for i in range(0,m-1):
+        if a[i+1] > a[i]:
+                count = count + a[i+1] - a[i]
+        elif a[i+1] < a[i]:
+                count = count + ((n-a[i]) + (a[i+1] - 1)) + 1
+        else:
+                continue
+
+print count 
