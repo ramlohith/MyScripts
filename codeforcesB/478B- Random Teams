@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+def pairs(p):
+        return (p*(p-1))/2
+
+n,m = map(int, raw_input().split())
+
+kmin = 0
+q = n%m
+k = n/m
+
+if q != 0:
+        kmin = kmin + (pairs(k + 1) * q)
+        kmin = kmin + (pairs(k) * (m-q))
+else:
+        kmin = pairs(k) * m
+
+kmax = pairs((n-m+1))
+print str(kmin) + " "+str(kmax)
