@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+n,l = map(int,raw_input().split())
+
+a = []
+a = map(int,raw_input().split())
+a.sort()
+s = max(a[0], l-a[n-1])
+
+for i in range(0,n-1):
+        q = float(a[i+1] - a[i])/2
+        s = max(s,q)
+
+print '{0:.10f}'.format(s)
