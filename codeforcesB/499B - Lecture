@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+import sys
+
+n,m = map(int,raw_input().split())
+
+a = []
+d = dict()
+for i in range(0,m):
+        a.append(raw_input().split())
+        d[a[i][0]] = a[i][1]
+
+b = raw_input().split()
+b = list(b)
+
+for i in b:
+        if len(d[i]) < len(i):
+                sys.stdout.write(d[i])
+                sys.stdout.write(' ')
+        else:
+                sys.stdout.write(i)
+                sys.stdout.write(' ')
