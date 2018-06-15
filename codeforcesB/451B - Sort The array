@@ -1,0 +1,42 @@
+#!/usr/bin/python
+
+n = int(raw_input())
+a = []
+b = []
+c = []
+a = map(int,raw_input().split())
+b = sorted(a)
+start = 0
+end = 0
+
+for i in range(0,n-1):
+	if a[i] < a[i+1]:
+		continue
+	else:
+		start = i
+		for j in range(start,n-1):
+			if a[j] > a[j+1]:
+				continue
+			else:
+				end = j
+				break
+		if end == 0:
+			end = n-1
+		break
+
+c = a[start:end+1]
+d = []
+for i in reversed(c):
+	if i == b[start]:
+		start = start + 1
+		d.append(i)
+		continue
+	else:
+		break
+
+d = d + a[end+1:]
+if start == end+1 and b[start-len(c):]==d:
+	print "yes"
+	print str(start - len(c) + 1) + " " + str(end+1)
+else:
+	print "no"
