@@ -1,0 +1,36 @@
+#!/usr/bin/python
+
+import math
+
+def tprime(x):
+	count = 0
+	flag = "NO"
+	if x<2:
+		return flag
+	elif x==2:
+		flag = "YES"
+		return flag
+	elif x%2==0:
+		return flag
+	for i in range(3,x,2):
+		if(x%i==0):
+			return flag
+	return "YES"
+
+def theresult(x):
+	j = int(math.sqrt(x))
+	if j * j == x:
+		if tprime(j) == "YES":
+			return "YES"
+		else:
+			return "NO"
+	else:
+		return "NO"
+
+n = int(raw_input())
+a = []
+a = map(int,raw_input().split())
+
+for i in map(theresult,a):
+	print i
+
