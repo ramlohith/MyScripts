@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+n = raw_input()
+n = list(n)
+x = -1
+q = 0
+
+for i in range(len(n)):
+        if int(n[i]) % 2 == 0:
+                x = i
+                if int(n[-1]) > int(n[i]):
+                        break
+
+n[-1], n[x] = n[x], n[-1]
+
+if x == -1:
+        print x
+
+else:
+        print ''.join(n)
