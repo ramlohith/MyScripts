@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import string
+import operator
+
+s = raw_input()
+s = list(s)
+k = int(raw_input())
+a = []
+a = map(int,raw_input().split())
+d = {}
+d = dict(zip(list(string.ascii_lowercase),a))
+p = max(d.iteritems(), key = operator.itemgetter(1))[0]
+p = list(p)
+s = s + k*p
+value = 0
+for i in range(len(s)):
+	value = value + ((i+1) * d[s[i]])
+
+print value
