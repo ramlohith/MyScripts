@@ -1,0 +1,10 @@
+#!/usr/bin/python
+
+import math as m
+
+r,x,y,x1,y1 = map(int,raw_input().split())
+
+d = m.sqrt((x-x1) * (x-x1) + (y-y1) * (y-y1))
+x = m.ceil(d/(2*r))
+x = int(x)
+print x
