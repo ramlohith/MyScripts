@@ -1,0 +1,27 @@
+n = (int)(input())
+a = list(map(int,input().split()))
+if a == sorted(a):
+    print ('0')
+elif a == sorted(a,reverse = True):
+    if n == 2:
+        print(n-1)
+    else:
+        print('-1')
+else:
+    limit = a[0]
+    if a[1] < a[0]:
+        if a[1:] == sorted(a[1:]) and a[len(a) - 1] <= limit:
+            print (len(a[1:]))
+        else:
+            print('-1')
+    else:
+        ct = 0
+        pos = -1
+        for x in range(1,len(a)-1):
+            if a[x] >= a[x-1] and a[x] > a[x+1]:
+                ct += 1
+                pos = x
+        if ct == 1 and a[pos+1:] == sorted(a[pos+1:]) and a[len(a) - 1] <= limit:
+            print (len(a[pos+1:]))
+        else:
+            print ('-1')
