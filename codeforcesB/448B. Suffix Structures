@@ -1,0 +1,53 @@
+#!/usr/bin/python
+
+from collections import Counter
+
+s = raw_input()
+t = raw_input()
+s = list(s)
+t = list(t)
+flag = 0
+l = []
+x = Counter(s)
+x = dict(x)
+y = Counter(t)
+y = dict(y)
+
+def contains(a):
+	if a in s:
+		return True
+	else:
+		return False
+for i in t:
+	if contains(i) and y[i] <= x[i]:
+		continue
+	else:
+		flag = -1
+		break
+
+if flag == -1:
+	print "need tree"
+	quit()
+
+s1 = Counter(s)
+t1 = Counter(t)
+
+if len(s) == len(t):
+	if s1 == t1:
+		print "array"
+	else:
+		print "need tree"
+elif len(s) < len(t):
+	print "need tree"
+else:
+	j = 0
+	for i in range(len(s)):
+		if (j < len(t)) and (s[i] == t[j]):
+			l.append(s[i])
+			j = j+1
+	l = ''.join(l)
+	t = ''.join(t)
+	if t in l:
+		print "automaton"
+	else:
+		print "both"
