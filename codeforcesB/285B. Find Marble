@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+n,s,t = map(int,raw_input().split())
+p = []
+p = map(int,raw_input().split())
+
+a = [i for i in range(1,n+1)]
+d = dict(zip(a,p))
+x = d[s]
+count = 0
+if s == t:
+        print count
+else:
+        for i in range(n):
+                count = count + 1
+                if x == t:
+                        print count
+                        break
+                else:
+                        x = d[x]
+
+if count == n:
+        print "-1"
