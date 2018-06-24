@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+sum = 0
+
+r00,r01,r02 = raw_input().split()
+r10,r11,r12 = raw_input().split()
+r20,r21,r22 = raw_input().split()
+
+sum = int(r01) + int(r02) + int(r10) + int(r12) + int(r20) + int(r21)
+sum = sum/2
+r00 = sum - (int(r01) + int(r02))
+r11 = sum - (int(r10) + int(r12))
+r22 = sum - (int(r20) + int(r21))
+
+print str(r00) + " "+str(r01)+" "+str(r02)
+print str(r10)+" "+str(r11)+" "+str(r12)
+print str(r20)+ " " +str(r21)+ " "+str(r22)
