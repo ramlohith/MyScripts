@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+from __future__ import print_function
+from collections import Counter
+
+n = int(raw_input())
+k = []
+d = []
+for i in range(n):
+        k.append(raw_input().split())
+        d.append(k[i][0])
+
+e = dict(Counter(d))
+g = (len(k) - 1) * 2
+
+for i in range(n):
+        home = g/2
+        away = g/2
+        if k[i][1] in e:
+                home = home + e[k[i][1]]
+                away = away - e[k[i][1]]
+        print (home,away)
