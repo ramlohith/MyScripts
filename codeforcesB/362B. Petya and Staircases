@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+n,m=raw_input().split()
+m = int(m)
+s=[]
+flag = 1
+if m > 0:
+        s = raw_input().split()
+        s = [int(i) for i in s]
+        s.sort()
+        if s[0]==1 or s[m-1]==int(n):
+                flag = flag - 1
+if flag > 0:
+        for i in range(m-2):
+                if s[i+1]- s[i] == 1:
+                        if s[i+2] - s[i+1] == 1:
+                                flag = flag - 1
+                                break
+                else:
+                        continue
+
+if flag < 1:
+        print "NO"
+else:
+        print "YES" 
+
